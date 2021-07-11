@@ -2,25 +2,25 @@ const expect = @import("std").testing.expect;
 
 test "for" {
     const string = [_]u8{ 'a', 'b', 'c' };
-    var lastChar: u8 = undefined;
-    var lastIndex: usize = undefined;
+    var last_char: u8 = undefined;
+    var last_index: usize = undefined;
 
     for (string) |character, index| {
-        lastChar = character;
-        lastIndex = index;
+        last_char = character;
+        last_index = index;
     }
-    try expect(lastChar == 'c');
-    try expect(lastIndex == 2);
+    try expect(last_char == 'c');
+    try expect(last_index == 2);
 
     for (string) |character| {
-        lastChar = character;
+        last_char = character;
     }
-    try expect(lastChar == 'c');
+    try expect(last_char == 'c');
 
     for (string) |_, index| {
-        lastIndex = index;
+        last_index = index;
     }
-    try expect(lastIndex == 2);
+    try expect(last_index == 2);
 
     for (string) |_| {}
 }
