@@ -1,4 +1,5 @@
 const expect = @import("std").testing.expect;
+const eql = @import("std").mem.eql;
 
 fn fibonacci(n: u32) u32 {
     if (n == 1 or n == 0) return n;
@@ -92,8 +93,6 @@ test "@Type" {
     try expect(GetBiggerInt(u8) == u9);
     try expect(GetBiggerInt(i31) == i32);
 }
-
-const eql = @import("std").mem.eql;
 
 test "generic vector" {
     const x = Vec(3, f32).init([_]f32{ 10, -10, 5 });
