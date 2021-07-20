@@ -28,6 +28,6 @@ test "@intCast" {
 
 test "well defined overflow" {
     var a: i8 = 127;
-    a +%=1; // +% is a wrapping operator
+    a +%= 1; // +% is a wrapping operator
     try expect(a == -128);
 }
